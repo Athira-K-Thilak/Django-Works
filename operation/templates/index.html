@@ -1,0 +1,21 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block main_block%}
+<h1>Index</h1>
+    <a href="{%url 'add' %}">Addition</a>
+    <a href="{%url 'calorie' %}">Calorie</a>
+    <a href="{%url 'milage'%}">Milage</a>
+    <a href="{%url 'bmi'%}">BMI</a>
+    <a href="{%url 'appointment'%}">Appointment</a>
+    <a href="{%url 'bmr'%}">BMR</a>
+    <a href="{%url 'vehicle'%}">Vehicle</a>
+    <a href="{%url 'sign'%}">SignUp</a>
+    <a href="{%url 'sub'%}">Subtraction</a>
+    <a href="{%url 'mul'%}">Multiplication</a>
+    <a href="{%url 'div'%}">Division</a>
+    <div>
+        <img src="{%static 'images/search.png'%}" alt="no image">
+    </div>
+    
+
+{%endblock%}

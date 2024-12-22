@@ -157,6 +157,39 @@ class AppointmentView(View):
             'form':form_instance
         }     
         return render(request,'appointment.html',context)  
+    def post(self,request,*args,**kwargs):
+
+        form_data=request.POST
+
+        form_instance=AppointmentForm(form_data)
+
+        if form_instance.is_valid():
+
+            data=form_instance.cleaned_data
+
+            full_name=data.get('full_name')
+
+            print(full_name)
+
+            contact=data.get("contact_number")
+
+            print(contact)
+
+            email=data.get("email_address")
+            print(email)
+            address=data.get("address")
+            print(address)
+            street_add=data.get('street_address' )
+            print(street_add)
+            add2=data.get("street_address_line1")
+            print(add2)
+            city=data.get("city")
+            print(city)
+            zip=data.get("ZipCode")
+            print(zip)
+            date=data.get("date")
+            print(date)
+        return render(request,'appointment.html',{'form':form_instance})
     
 #bmi
 class BmiView(View):
@@ -276,7 +309,14 @@ class CalorieView(View):
         return render(request,'calorie.html',{'form':form_instance,'bmr':BMR,'calorie':calorie})    
     
 
+#index
 
+
+class IndexView(View):
+
+    def get(self,request,*args,**kwargs):
+
+        return render(request,'index.html')
 
 
 

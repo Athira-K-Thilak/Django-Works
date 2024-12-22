@@ -1,25 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Appointment Request Form</h1>
-    <input type="text" class="form-control">
-    <div class="container">
-        <div class="row">
-            <div class="col-4"></div>
-            <div class="col-4">
-                <form action="" method="post" class="border border-2 rounded shadow p-4">
-                    {%csrf_token%}
-                    {{form}}
-                    <button type="submit">Submit</button>
-                </form>
-            </div>
-            <div class="col-4"></div>
-        </div>
-    </div>
-</body>
-</html>
+{%extends 'base.html'%}
+{%block main_block%}
+<h1>Appointment Request Form</h1>
+<form action="" method="post" >
+    {%csrf_token%}
+    {{form}}
+    <button type="submit">Submit</button>
+</form>
+
+{%endblock%}

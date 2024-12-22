@@ -24,22 +24,24 @@ from operation.views import AppointmentView
 from operation.views import BmiView
 from operation.views import MilageView
 from operation.views import CalorieView
+from operation.views import IndexView
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('addition/',AdditionView.as_view()),
-    path('subtract/',SubtractionView.as_view()),
-    path('multiply/',MultiplicationView.as_view()),
-    path('division/',DivisionView.as_view()),
-    path('register/',SignUpView.as_view()),
-    path('vehicle/',VehicleAddView.as_view()),
-    path('bmr/',BmrView.as_view()),
-    path('appointment/',AppointmentView.as_view()),
-    path('bmi/',BmiView.as_view()),
-    path("milage/",MilageView.as_view()),
-    path('calorie/',CalorieView.as_view(),)
-
+    path('addition/',AdditionView.as_view(),name='add'),
+    path('subtract/',SubtractionView.as_view(),name='sub'),
+    path('multiply/',MultiplicationView.as_view(),name='mul'),
+    path('division/',DivisionView.as_view(),name='div'),
+    path('register/',SignUpView.as_view(),name='sign'),
+    path('vehicle/',VehicleAddView.as_view(),name='vehicle'),
+    path('bmr/',BmrView.as_view(),name='bmr'),
+    path('appointment/',AppointmentView.as_view(),name='appointment'),
+    path('bmi/',BmiView.as_view(),name='bmi'),
+    path("milage/",MilageView.as_view(),name='milage'),
+    path('calorie/',CalorieView.as_view(),name='calorie'),
+    path("",IndexView.as_view(),name='index'),
+    
 ]
 
 
